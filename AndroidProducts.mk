@@ -12,11 +12,11 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-PRODUCT_MAKEFILES := $(LOCAL_DIR)/aosp_f5121.mk \
-                     $(LOCAL_DIR)/aosp_f5122.mk
+PRODUCT_MAKEFILES := $(LOCAL_DIR)/aosp_kenzo.mk \
+                     $(LOCAL_DIR)/aosp_kate.mk
 
 COMMON_LUNCH_CHOICES += \
-    aosp_f5121-eng \
-    aosp_f5121-userdebug \
-    aosp_f5122-eng \
-    aosp_f5122-userdebug
+    aosp_kenzo-eng \
+    aosp_kenzo-userdebug \
+    aosp_kate-eng \
+    aosp_kate-userdebug

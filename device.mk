@@ -13,10 +13,10 @@
 # limitations under the License.
 
 # Device path
-DEVICE_PATH := device/sony/suzu/rootdir
+DEVICE_PATH := device/sony/kenzo/rootdir
 
 DEVICE_PACKAGE_OVERLAYS += \
-    device/sony/suzu/overlay
+    device/sony/kenzo/overlay
 
 # declare brcmfmac as the wifi driver
 WIFI_DRIVER_BUILT := brcmfmac
@@ -72,9 +72,9 @@ endif
 
 # Device Init
 PRODUCT_PACKAGES += \
-    fstab.suzu \
-    init.recovery.suzu \
-    init.suzu
+    fstab.kenzo \
+    init.recovery.kenzo \
+    init.kenzo
 
 # Telephony Packages (AOSP)
 PRODUCT_PACKAGES += \
@@ -96,7 +96,7 @@ PRODUCT_PROPERTY_OVERRIDES := \
     ro.usb.pid_suffix=1E0
 
 # Inherit from those products. Most specific first.
-$(call inherit-product, device/sony/loire/platform.mk)
+$(call inherit-product, device/sony/msm8956/platform.mk)
 
 # copy wlan firmware
 $(call inherit-product-if-exists, vendor/broadcom/wlan/bcmdhd/firmware/bcm43455/device-bcm-vendor.mk)

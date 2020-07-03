@@ -12,29 +12,29 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-include device/sony/loire/PlatformConfig.mk
+include device/sony/msm8956/PlatformConfig.mk
 
 TARGET_BOOTLOADER_BOARD_NAME := unknown
-ifneq (,$(filter %f5121,$(TARGET_PRODUCT)))
-TARGET_BOOTLOADER_BOARD_NAME := F5121
-else ifneq (,$(filter %f5122,$(TARGET_PRODUCT)))
-TARGET_BOOTLOADER_BOARD_NAME := F5122
+ifneq (,$(filter %kenzo,$(TARGET_PRODUCT)))
+TARGET_BOOTLOADER_BOARD_NAME := kenzo
+else ifneq (,$(filter %kate,$(TARGET_PRODUCT)))
+TARGET_BOOTLOADER_BOARD_NAME := kate
 else
-TARGET_BOOTLOADER_BOARD_NAME := F5121
+TARGET_BOOTLOADER_BOARD_NAME := kenzo
 $(warning Unrecognized value for TARGET_PRODUCT: "$(TARGET_PRODUCT)", using default value: "$(TARGET_BOOTLOADER_BOARD_NAME)")
 endif
 
 # Platform
-PRODUCT_PLATFORM := loire
+PRODUCT_PLATFORM := msm8956
 
 BOARD_KERNEL_CMDLINE += androidboot.hardware=suzu
 
 # Partition information
 BOARD_FLASH_BLOCK_SIZE := 131072 # (BOARD_KERNEL_PAGESIZE * 64)
 BOARD_CACHEIMAGE_PARTITION_SIZE := 268435456
-BOARD_SYSTEMIMAGE_PARTITION_SIZE := 7843348480
+BOARD_SYSTEMIMAGE_PARTITION_SIZE := 2684354560
 BOARD_ODMIMAGE_PARTITION_SIZE := 419430400
 # Reserve space for data encryption (22225616896-16384)
-BOARD_USERDATAIMAGE_PARTITION_SIZE := 22225600512
+BOARD_USERDATAIMAGE_PARTITION_SIZE := 26419354624
 
 #TARGET_TAP_TO_WAKE_NODE := "/sys/devices/virtual/input/clearpad/wakeup_gesture"

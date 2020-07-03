@@ -12,17 +12,12 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-# DualSim
-PRODUCT_DEVICE_DS := true
-
-PRODUCT_PROPERTY_OVERRIDES += \
-    ro.telephony.default_network=9,1
 
 # Inherit from those products. Most specific first.
-$(call inherit-product, device/sony/suzu/aosp_f5121.mk)
+$(call inherit-product, device/sony/kenzo/aosp_kenzo.mk)
 
-PRODUCT_NAME := aosp_f5122
-PRODUCT_DEVICE := suzu
-PRODUCT_MODEL := Xperia X Dual (AOSP)
-PRODUCT_BRAND := Sony
-PRODUCT_MANUFACTURER := Sony
+PRODUCT_NAME := aosp_kate
+PRODUCT_DEVICE := kate
+PRODUCT_MODEL := Redmi Note 3 (AOSP)
+PRODUCT_BRAND := Xiaomi
+PRODUCT_MANUFACTURER := Xiaomi
